@@ -1,0 +1,36 @@
+public class Result {
+    float sportwt = 6.0f;
+
+    int rollno;
+    float part1, part2;
+
+    void getNumber(int n) {
+        rollno = n;
+    }
+
+    void getMarks(float m1, float m2) {
+        part1 = m1;
+        part2 = m2;
+    }
+
+    void putwt() {
+        System.out.println("sportwt=" + sportwt);
+    }
+
+    void display() {
+        float total = part1 + part2 + sportwt;
+        System.out.println("Roll No: " + rollno);
+        System.out.println("\t Marks Obtained:");
+        System.out.println("Part1: " + part1);
+        System.out.println("Part2: " + part2);
+        putwt();
+        System.out.println("Total Score: " + total);
+    }
+
+    public static void main(String[] args) {
+        Result student1 = new Result();
+        student1.getNumber(123);
+        student1.getMarks(27.5f, 33.0f);
+        student1.display();
+    }
+}
