@@ -1,0 +1,14 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class ExtendingFrameClass {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame();
+        frame.setLayout(new FlowLayout());
+        frame.add(new JButton("OK"));
+        frame.add(new JButton("Cancel"));
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(350, 150);
+        frame.setVisible(true);
+    }
+}
