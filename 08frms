@@ -1,0 +1,47 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class btnnaction extends Frame implements ActionListener {
+    Button b1, b2;
+    TextField t1, t2, t3;
+    TextArea ta;
+    Label l1, l2, l3, l4;
+
+    btnnaction() {
+        setLayout(new FlowLayout());
+        add(new Label("Name"));
+        t1 = new TextField(10);
+        add(t1);
+        add(new Label("Age"));
+        t2 = new TextField(10);
+        add(t2);
+        add(new Label("Qualification"));
+        t3 = new TextField(10);
+        add(t3);
+        ta = new TextArea(3, 5);
+        add(ta);
+        b1 = new Button("Click");
+        b1.addActionListener(this);
+        add(b1);
+        b2 = new Button("Exit");
+        b2.addActionListener(this);
+        add(b2);
+    }
+
+    public static void main(String args[]) {
+        btnnaction b = new btnnaction();
+        b.setSize(400, 300);
+        b.setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == b1) {
+            t1.setText("Bindhu");
+            t2.setText("20");
+            t3.setText("Bsc.IT");
+            ta.setText("Charring cross,ooty");
+        } else if (ae.getSource() == b2) {
+            System.exit(0);
+        }
+    }
+}
