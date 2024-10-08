@@ -1,0 +1,24 @@
+import java.awt.*;
+
+public class mbar extends Frame {
+    mbar() {
+        MenuBar mb = new MenuBar();
+        Menu mfile = new Menu("file");
+        Menu medit = new Menu("edit");
+        mfile.add(new MenuItem("new"));
+        mfile.add(new MenuItem("open"));
+        mfile.add(new MenuItem("exit"));
+        medit.add(new MenuItem("cut"));
+        medit.add(new MenuItem("copy"));
+        medit.add(new MenuItem("paste"));
+        mb.add(mfile);
+        mb.add(medit);
+        setMenuBar(mb);
+    }
+
+    public static void main(String args[]) {
+        mbar m = new mbar();
+        m.setSize(200, 200);
+        m.setVisible(true);
+    }
+}
