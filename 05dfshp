@@ -1,18 +1,9 @@
+import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
-public class Program5uh extends java.awt.Frame {
-    public Program5uh() {
-        setSize(300, 300);
-        setVisible(true);
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
-        });
-    }
-
-    public void paint(Graphics g) {
+public class test5 extends JPanel {
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
         g.drawLine(10, 10, 75, 70);
         g.drawRect(10, 60, 40, 30);
         g.drawRoundRect(10, 100, 80, 50, 10, 10);
@@ -22,6 +13,9 @@ public class Program5uh extends java.awt.Frame {
     }
 
     public static void main(String[] args) {
-        new Program5uh();
+        JFrame frame = new JFrame("Shapes");
+        frame.setSize(400, 300);
+        frame.add(new test5());
+        frame.setVisible(true);
     }
 }
