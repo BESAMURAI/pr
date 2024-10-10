@@ -1,24 +1,23 @@
 import java.awt.*;
 import java.awt.event.*;
 
-class fshp extends Frame implements MouseListener, MouseMotionListener {
+class fshp extends Frame {
     int x, y;
 
     fshp(String title) {
         super(title);
-        addMouseListener(this);
-        addMouseMotionListener(this);
+        addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                x = e.getX();
+                y = e.getY();
+                repaint();
+            }
+        });
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
             }
         });
-    }
-
-    public void mousePressed(MouseEvent e) {
-        x = e.getX();
-        y = e.getY();
-        repaint();
     }
 
     public void paint(Graphics g) {
