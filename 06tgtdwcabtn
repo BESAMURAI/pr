@@ -12,23 +12,35 @@ public class test6 extends Frame implements ActionListener{
 		add(new Label("Name"));
 		t1=new TextField(10);
 		add(t1);
+		add(new Label("Street"));
+		t2=new TextField(10);
+		add(t2);
+		add(new Label("City"));
+		t3=new TextField(10);
+		add(t3);
+		add(new Label("Pincode"));
+		t4=new TextField(10);
+		add(t4);
 		b1=new Button("Get Details");
 		b1.addActionListener(this);
 		add(b1);
 		b2=new Button("Exit");
-		b2.addActionListener(this);
+		b1.addActionListener(this);
 		add(b2);
 	}
 	
 	public static void main(String args[]){
-		test6 t =new test6();
-		t.setSize(300,300);
+		test6 t=new test6();
+		t.setSize(500,450);
 		t.setVisible(true);
 	}
 	
 	public void actionPerformed(ActionEvent ae){
 		if(ae.getSource()==b1){
-			t1.setText("Joe");
+			t1.setText("James");
+			t2.setText("Joe Street");
+			t3.setText("Mumbai");
+			t4.setText("622564");
 		}else{
 			System.exit(0);
 		}
